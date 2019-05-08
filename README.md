@@ -13,7 +13,11 @@ This respoitory holds code for the North Ainslie Primary School after-school cod
 + Either Arduino IDE (https://www.arduino.cc/en/main/software)
 + Or Codebender (https://codebender.cc/) 
 
-TODO: check whether Chromebooks allow software installation and access to USB/COM ports
+### Chrome OS
+
+For Google ChromeBooks there is an Arduino Create [education plan](https://create.arduino.cc/plans/chrome-app),
+which allows cloud-based editing and programming of various Arduino boards.
+
 
 ## Lesson Plan
 
