@@ -23,6 +23,5 @@ void loop() {
 
   // get the reply
   String name = Serial.readString();
-  Serial.print("Hello ");
-  Serial.println(name);
+  Serial.println("Hello " + name);
 }
