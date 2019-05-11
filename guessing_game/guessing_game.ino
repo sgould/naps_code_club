@@ -8,7 +8,8 @@
 
 const int RED_PIN = 12;
 const int YELLOW_PIN = 10;
-const int GREEN_PIN = 7;
+const int GREEN_PIN = 8;
+const int BLUE_PIN = 6;
 
 int secret_number;
 

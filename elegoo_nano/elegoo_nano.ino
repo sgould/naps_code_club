@@ -6,17 +6,20 @@
 
 const int RED_PIN = 12;
 const int YELLOW_PIN = 10;
-const int GREEN_PIN = 7;
+const int GREEN_PIN = 8;
+const int BLUE_PIN = 6;
  
  void setup() {
   // set up LEDs as output and turn off
   pinMode(RED_PIN, OUTPUT);
   pinMode(YELLOW_PIN, OUTPUT);
   pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
 
   digitalWrite(RED_PIN, LOW);
   digitalWrite(YELLOW_PIN, LOW);
   digitalWrite(GREEN_PIN, LOW);
+  digitalWrite(BLUE_PIN, LOW);
 }
 
 void loop() {
@@ -32,4 +35,8 @@ void loop() {
   digitalWrite(GREEN_PIN, HIGH);
   delay(1000);
   digitalWrite(GREEN_PIN, LOW);
+
+  digitalWrite(BLUE_PIN, HIGH);
+  delay(1000);
+  digitalWrite(BLUE_PIN, LOW);
 }
