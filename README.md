@@ -17,6 +17,7 @@ This respoitory holds code for the North Ainslie Primary School after-school cod
 
 For Google ChromeBooks there is an Arduino Create [education plan](https://create.arduino.cc/plans/chrome-app),
 which allows cloud-based editing and programming of various Arduino boards.
+Codebender also has an [edu monthly plan](https://edu.codebender.cc/).
 
 
 ## Lesson Plan
