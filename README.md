@@ -22,4 +22,4 @@ Codebender also has an [edu monthly plan](https://edu.codebender.cc/).
 
 ## Lesson Plan
 
-[Draft Lesson Plan](https://github.com/sgould/naps_code_club/wiki/Lesson-Plan)
+[Lesson Plan](https://github.com/sgould/naps_code_club/wiki/Lesson-Plan)
