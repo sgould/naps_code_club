@@ -5,8 +5,9 @@ This respoitory holds code for the North Ainslie Primary School after-school cod
 ## Hardware
 
 + LittleBits Droid Inventor Kit (https://littlebits.com/products/droid-inventor-kit)
-+ LittleBits Arduino board (https://core-electronics.com.au/arduino-32512.html)
-+ Other Arduino development boards (e.g., Elegoo Nano)
++ LittleBits Arduino board (https://core-electronics.com.au/arduino-32512.html) -- see [notes](https://github.com/sgould/naps_code_club/wiki/LittleBits-Arduino-Board) for setting up
++ Other LittleBits bits and pieces (motors, servos, lights, etc)
++ Other Arduino development boards (e.g., Elegoo Nano), breadboard and various components
 
 ## Software
 
