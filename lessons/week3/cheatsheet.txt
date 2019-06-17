@@ -1,0 +1,46 @@
+// https://github.com/sgould/naps_code_club/
+
+// https://edu.codebender.cc/class/.....
+
+int x;
+
+x = 5;
+
+x = random(10);
+
+x = x + 1;
+
+x = x - 1;
+
+delay(1000);
+
+const int GREEN_PIN = 8;
+
+digitalWrite(GREEN_PIN, HIGH);
+digitalWrite(GREEN_PIN, LOW);
+
+if (digitalRead(BUTTON_PIN) == HIGH) {
+	// ...
+}
+
+while (digitalRead(BUTTON_PIN) == HIGH) {
+	// ...
+}
+
+Serial.println("Hello world");
+
+Serial.println(x);
+
+void loop() {
+	// ...
+	return;
+	// never gets here
+}
+
+void loop() {
+	// ...
+	if (something) {
+		return;
+	}
+	// might not get here
+}
