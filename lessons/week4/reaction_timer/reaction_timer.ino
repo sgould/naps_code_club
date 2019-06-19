@@ -17,8 +17,7 @@ void allLeds(int val) {
 void setup() {
   Serial.begin(9600);
 
-  pinMode(BUTTON_PIN, INPUT);
-  digitalWrite(BUTTON_PIN, HIGH); // turn on pullup
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
 
   pinMode(RED_PIN, OUTPUT);
   pinMode(YELLOW_PIN, OUTPUT);
