@@ -43,6 +43,8 @@ void loop() {
 
   // TODO: t = a random number between 0 and 5000
 
+  t = t + 2000;
+
   while (t > 0) {
     // TODO: Delay for 1 millisecond
     
