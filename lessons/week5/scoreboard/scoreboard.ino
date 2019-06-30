@@ -64,7 +64,7 @@ protected:
    void start() { pinMode(m_pinDIO, OUTPUT); bitDelay(); }
    void stop() { pinMode(m_pinDIO, OUTPUT); bitDelay(); pinMode(m_pinClk, INPUT); bitDelay(); pinMode(m_pinDIO, INPUT); bitDelay(); }
    bool writeByte(uint8_t b);
-   void showDots(uint8_t dots, uint8_t* digits);
+   void showDots(uint8_t dots, uint8_t* digits) { for (int i = 0; i < 4; ++i) { digits[i] |= (dots & 0x80); dots <<= 1; } }
    void showNumberBaseEx(int8_t base, uint16_t num, uint8_t dots = 0, bool leading_zero = false, uint8_t length = 4, uint8_t pos = 0);
 
 private:
@@ -202,14 +202,6 @@ bool TM1637Display::writeByte(uint8_t b)
 
   return ack;
 }
-
-void TM1637Display::showDots(uint8_t dots, uint8_t* digits)
-{
-    for(int i = 0; i < 4; ++i) {
-        digits[i] |= (dots & 0x80);
-        dots <<= 1;
-    }
-}
 #endif
 
 /********************************************************************************************************************
@@ -247,59 +239,39 @@ void setup()
   display.showNumberDec(100 * teamA + teamB, true);
   Serial.println("Team A: " + String(teamA));
   Serial.println("Team B: " + String(teamB));
+  Serial.flush();
 }
 
 void loop() 
 {
-  // check if the left button has been pressed
-  if (digitalRead(LEFT_BUTTON) == LOW) {
-    // increment score for team A
-    teamA = teamA + 1;
-    
-    // start timing in milliseconds
-    int t = 0;
-    while (digitalRead(LEFT_BUTTON) == LOW) {
-      // wait 10ms and increment timer
-      delay(10);
-      t = t + 10;
+  // TODO: The next few lines increment the team scores each second. Delete this code and
+  // start implementing your scoreboard at the next TODO.
+  teamA = teamA + 1;
+  teamB = teamB + 1;
+  display.showNumberDec(100 * teamA + teamB, true);
+  Serial.println("Team A: " + String(teamA));
+  Serial.println("Team B: " + String(teamB));
+  Serial.flush();
+  delay(1000);
+  
+  // TODO: check if the left button has been pressed
+  // if ( SOMETHING ) {
+  //   TODO: increment score for team A
 
-      // check if held down for more than 2 seconds
-      if (t > 2000) {
-        // reset the score for team A and show it
-        teamA = 0;
-        display.showNumberDec(100 * teamA + teamB, true);
-      }
-    }
+  //   // start timing how long the button has been held down
+  //   TODO: set a millisecond timer variable to 0
+  //   TODO: while the left button is down update the timer variable
+  //   while ( SOMETHING ) {
+  //     TODO: wait 10ms and increment timer by 10
+  //
+  //     TODO: if statement to check if held down for more than 2 seconds
+  //     if ( SOMETHING ) {
+  //       TODO: reset the score for team A and show it
+  //     }
+  //   }
+  //
+  //   TODO: display the updated score
+  // }
 
-    // display the score
-    display.showNumberDec(100 * teamA + teamB, true);
-    Serial.println("Team A: " + String(teamA));
-    Serial.println("Team B: " + String(teamB));
-  }
-
-  // check if the right button has been pressed
-  if (digitalRead(RIGHT_BUTTON) == LOW) {
-    // increment score for team B
-    teamB = teamB + 1;
-    
-    // start timing in milliseconds
-    int t = 0;
-    while (digitalRead(RIGHT_BUTTON) == LOW) {
-      // wait 10ms and increment timer
-      delay(10);
-      t = t + 10;
-
-      // check if held down for more than 2 seconds
-      if (t > 2000) {
-        // reset the score for team B and show it
-        teamB = 0;
-        display.showNumberDec(100 * teamA + teamB, true);
-      }
-    }
-
-    // display the score
-    display.showNumberDec(100 * teamA + teamB, true);
-    Serial.println("Team A: " + String(teamA));
-    Serial.println("Team B: " + String(teamB));
-  }  
+  // TODO: repeat for the right button and team B
 }
