@@ -233,26 +233,24 @@ void setup()
 void loop() 
 {
   // TODO: check if stopwatch is running
-  if (startStop == 1) {
-    // TODO: increase counter by 1
-    counter = counter + 1;
-  }
+  // if ( SOMETHING ) {
+  //   // TODO: increase counter by 1
+  // }
 
   // TODO: check if left button is pressed
-  if (digitalRead(LEFT_BUTTON) == LOW) {
-    // TODO: toggle start/stop
-    startStop = 1 - startStop;
-    // TODO: wait for button to depress
-    while (digitalRead(LEFT_BUTTON) == LOW) {
-      delay(10);
-    }
-  }
+  // if ( SOMETHING ) {
+  //   // TODO: toggle start/stop
+  //   
+  // // TODO: wait for button to depress
+  // while ( SOMETHING ) {
+  //    // TODO: delay
+  // }
+  // }
 
   // TODO: check if right button is pressed
-  if (digitalRead(RIGHT_BUTTON) == LOW) {
-    // TODO: set counter to zero
-    counter = 0;
-  }
+  // if ( SOMETHING ) {
+  // // TODO: set counter to zero
+  // }
 
   // show current counter value and delay 100ms
   display.showNumberDecEx(counter, 0b00100000, true);
