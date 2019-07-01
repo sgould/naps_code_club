@@ -1,5 +1,5 @@
 /*
- * SCOREBOARD: NAPS Code Club starter code for Week 5. Uses the TM1637 4-digit LED display to implement a stopwatch.
+ * STOPWATCH: NAPS Code Club starter code for Week 5. Uses the TM1637 4-digit LED display to implement a stopwatch.
  * Left button to start and stop. Right button to reset.
  * 
  * https://raw.githubusercontent.com/sgould/naps_code_club/master/lessons/week5/stopwatch/stopwatch.ino
