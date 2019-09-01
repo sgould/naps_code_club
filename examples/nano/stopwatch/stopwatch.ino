@@ -19,6 +19,8 @@ const int YELLOW_LED = 10;
 const int GREEN_LED = 8;
 const int BLUE_LED = 6;
 
+const int LTL_BITS = 5;
+
 TM1637Display display(CLK, DIO);
 bool startStop;
 int counter;
@@ -35,6 +37,7 @@ void setup()
   pinMode(YELLOW_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
   pinMode(BLUE_LED, OUTPUT);
+  pinMode(LTL_BITS, OUTPUT);
 
   // setup display
   display.setBrightness(0x0f);
@@ -47,7 +50,8 @@ void setup()
   digitalWrite(RED_LED, HIGH);
   digitalWrite(YELLOW_LED, LOW);
   digitalWrite(GREEN_LED, LOW);
-  digitalWrite(BLUE_LED, LOW);  
+  digitalWrite(BLUE_LED, LOW);
+  digitalWrite(LTL_BITS, LOW);
 }
 
 void loop() 
@@ -57,6 +61,7 @@ void loop()
     startStop = !startStop;
     digitalWrite(RED_LED, startStop ? LOW : HIGH);
     digitalWrite(GREEN_LED, startStop ? HIGH : LOW);
+    digitalWrite(LTL_BITS, startStop ? HIGH : LOW);
     while (digitalRead(LEFT_BUTTON) == LOW) {
       delay(10);
     }
